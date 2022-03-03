@@ -1,7 +1,23 @@
-/**
- * Implement Gatsby's Browser APIs in this file.
- *
- * See: https://www.gatsbyjs.com/docs/browser-apis/
- */
+const React = require('react');
+const { ChakraProvider } = require('@chakra-ui/react');
+const {
+  ApolloClient,
+  ApolloProvider,
+  InMemoryCache,
+} = require('@apollo/client');
+const Layout = require('./src/components/Layout').default;
 
-// You can delete this file if you're not using it
+const client = new ApolloClient({
+  uri: 'https://rickandmortyapi.com/graphql',
+  cache: new InMemoryCache(),
+});
+
+exports.wrapRootElement = ({ element }) => (
+  <ChakraProvider resetCSS>
+    <ApolloProvider client={client}>{element}</ApolloProvider>
+  </ChakraProvider>
+);
+
+exports.wrapPageElement = ({ element, props }) => (
+  <Layout {...props}>{element}</Layout>
+);
