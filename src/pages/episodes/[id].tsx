@@ -26,7 +26,9 @@ const Episode = ({ id }) => {
   if (loading) return <Loader />;
 
   const { episode } = data;
-  const episodeNumber = episode.episode.split(/[A-Z]/);
+  const seasonAndEpisode = episode.episode.split(/[A-Z]/);
+  const seasonNumber = Number(seasonAndEpisode[1]);
+  const episodeNumber = Number(seasonAndEpisode[2]);
 
   return (
     <Container>
@@ -46,8 +48,8 @@ const Episode = ({ id }) => {
         <Text fontSize="xl" fontWeight="bold" align="center">
           {episode.name}
         </Text>
-        <Text mt="10">Season: {Number(episodeNumber[1])}</Text>
-        <Text mt="5">Episode: {Number(episodeNumber[2])}</Text>
+        <Text mt="10">Season: {seasonNumber}</Text>
+        <Text mt="5">Episode: {episodeNumber}</Text>
         <Text mt="5">Air date: {episode.air_date}</Text>
         <Text mt="5">Characters: </Text>
         {episode.characters.map((character) => (
@@ -60,7 +62,7 @@ const Episode = ({ id }) => {
             ,&nbsp;
           </Text>
         ))}
-        <BackButton to="/episodes" />
+        <BackButton to={`/episodes/season/${seasonNumber}`} />
       </Box>
     </Container>
   );

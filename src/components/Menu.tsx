@@ -2,14 +2,19 @@ import React from 'react';
 import { Link } from 'gatsby';
 import { List, ListItem } from '@chakra-ui/react';
 
-const links = [
+type linkType = {
+  name: string;
+  to: string;
+};
+
+const links: Array<linkType> = [
   {
     name: 'Characters',
     to: '/',
   },
   {
     name: 'Episodes',
-    to: '/episodes',
+    to: '/episodes/season/1',
   },
   {
     name: 'Locations',
