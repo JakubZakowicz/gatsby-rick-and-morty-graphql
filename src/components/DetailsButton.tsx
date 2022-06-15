@@ -9,7 +9,7 @@ type DetailsButtonProps = {
 };
 
 const DetailsButton: React.FC<DetailsButtonProps> = ({ name, to, width }) => (
-  <Button as={Link} to={to} bg="yellow" borderRadius="15" w={width}>
+  <Button as={Link} to={to} bg="yellow" borderRadius="15" w={width} zIndex={0}>
     {name}
   </Button>
 );

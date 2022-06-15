@@ -31,7 +31,7 @@ const Home: React.FC = () => {
       {data?.characters?.results.map((character) => (
         <Box
           key={character.id}
-          w="857px"
+          w={{ xl: '857px', base: 'auto' }}
           bg="gray"
           borderRadius={20}
           p={6}
@@ -39,7 +39,12 @@ const Home: React.FC = () => {
           boxShadow="dark-lg"
         >
           <Flex>
-            <Image src={character.image} borderRadius={20} w="250px" />
+            <Image
+              src={character.image}
+              borderRadius={20}
+              w={{ base: '100px', lg: '150px', xl: '250px' }}
+              h={{ base: '100px', lg: '150px', xl: '250px' }}
+            />
             <Flex direction="column" ml={10}>
               <Box lineHeight="10">
                 <Text fontSize="3xl" fontWeight="bold">
