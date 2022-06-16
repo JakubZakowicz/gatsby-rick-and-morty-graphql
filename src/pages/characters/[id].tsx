@@ -141,7 +141,7 @@ const Character: React.FC<CharacterType> = ({ id }) => {
                   as="button"
                   position="absolute"
                   right={{ base: '40%', xl: '-130' }}
-                  top={{ lx: '0' }}
+                  top={{ xl: '0' }}
                   onClick={() => setIsMore((prev) => !prev)}
                 >
                   {isMore ? (
@@ -160,7 +160,7 @@ const Character: React.FC<CharacterType> = ({ id }) => {
             </Box>
           </Box>
         </Flex>
-        <BackButton to="/" />
+        <BackButton />
       </Box>
     </Container>
   );

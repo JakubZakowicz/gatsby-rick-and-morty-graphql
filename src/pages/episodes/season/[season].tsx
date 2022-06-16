@@ -18,7 +18,11 @@ const GET_EPISODES = gql`
   }
 `;
 
-const Season = ({ season }) => {
+type SeasonProps = {
+  season: number;
+};
+
+const Season: React.FC<SeasonProps> = ({ season }) => {
   const { data, loading } = useQuery(GET_EPISODES, {
     variables: { season: `S0${season}` },
   });

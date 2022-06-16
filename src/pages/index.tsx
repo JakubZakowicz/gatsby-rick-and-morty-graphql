@@ -1,13 +1,20 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { navigate } from 'gatsby';
+import { useQueryParam, NumberParam } from 'use-query-params';
 import { gql, useQuery } from '@apollo/client';
 import { Box, Container, Flex, Image, Spacer, Text } from '@chakra-ui/react';
+import ReactPaginate from 'react-paginate';
 import Loader from '../components/Loader';
 import { statuses } from '../utils/statuses';
 import DetailsButton from '../components/DetailsButton';
+import '../paginationStyle.css';
 
 const GET_CHARACTERS = gql`
-  query GetCharacters {
-    characters {
+  query GetCharacters($page: Int) {
+    characters(page: $page) {
+      info {
+        pages
+      }
       results {
         id
         name
@@ -22,9 +29,17 @@ const GET_CHARACTERS = gql`
 `;
 
 const Home: React.FC = () => {
-  const { loading, data } = useQuery(GET_CHARACTERS);
+  const [pageParam] = useQueryParam('page', NumberParam);
+  const [page, setPage] = useState(pageParam ?? 1);
+  const { loading, data } = useQuery(GET_CHARACTERS, { variables: { page } });
 
   if (loading) return <Loader />;
+
+  const handlePageClick = (e: { selected: number }) => {
+    const selectedPage = e.selected + 1;
+    setPage(selectedPage);
+    navigate(`?page=${selectedPage}`);
+  };
 
   return (
     <Container>
@@ -78,6 +93,24 @@ const Home: React.FC = () => {
           </Flex>
         </Box>
       ))}
+      <Flex justify="start">
+        <ReactPaginate
+          pageCount={data.characters.info.pages}
+          initialPage={page - 1}
+          previousLabel="<"
+          nextLabel=">"
+          pageLinkClassName="link"
+          previousLinkClassName="link"
+          nextLinkClassName="link"
+          breakLabel="..."
+          breakLinkClassName="link"
+          marginPagesDisplayed={2}
+          pageRangeDisplayed={5}
+          containerClassName="container"
+          activeLinkClassName="active-link"
+          onPageChange={handlePageClick}
+        />
+      </Flex>
     </Container>
   );
 };

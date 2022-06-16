@@ -4,7 +4,7 @@ import { Slide, Fade, Box, List, ListItem } from '@chakra-ui/react';
 import MenuBar from './MenuBar';
 import { links } from '../utils/links';
 
-const MobileMenu = () => {
+const MobileMenu: React.FC = () => {
   const [displayed, setDisplayed] = useState(false);
 
   const toggleDisplayed = () => {

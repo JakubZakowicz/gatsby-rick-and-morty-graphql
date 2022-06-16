@@ -20,7 +20,11 @@ const GET_LOCATION = gql`
   }
 `;
 
-const Location = ({ id }) => {
+type LocationProps = {
+  id: number;
+};
+
+const Location: React.FC<LocationProps> = ({ id }) => {
   const { data, loading } = useQuery(GET_LOCATION, { variables: { id } });
 
   if (loading) return <Loader />;
@@ -58,7 +62,7 @@ const Location = ({ id }) => {
             ,&nbsp;
           </Text>
         ))}
-        <BackButton to="/locations" />
+        <BackButton />
       </Box>
     </Container>
   );

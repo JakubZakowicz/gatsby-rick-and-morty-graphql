@@ -4,7 +4,7 @@ import { List, ListItem } from '@chakra-ui/react';
 import { links } from '@/utils/links';
 import MobileMenu from './MobileMenu';
 
-const Menu = () => (
+const Menu: React.FC = () => (
   <>
     <List
       position="fixed"

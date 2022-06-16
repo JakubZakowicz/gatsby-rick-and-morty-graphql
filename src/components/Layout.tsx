@@ -1,7 +1,11 @@
 import React from 'react';
 import Menu from './Menu';
 
-const Layout = ({ children }) => (
+type LayoutProps = {
+  children: React.ReactNode;
+};
+
+const Layout: React.FC<LayoutProps> = ({ children }) => (
   <>
     <Menu />
     {children}

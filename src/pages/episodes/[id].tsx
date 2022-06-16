@@ -20,7 +20,9 @@ const GET_EPISODE = gql`
   }
 `;
 
-const Episode = ({ id }) => {
+type EpisodeProps = { id: number };
+
+const Episode: React.FC<EpisodeProps> = ({ id }) => {
   const { data, loading } = useQuery(GET_EPISODE, { variables: { id } });
 
   if (loading) return <Loader />;
@@ -62,7 +64,7 @@ const Episode = ({ id }) => {
             ,&nbsp;
           </Text>
         ))}
-        <BackButton to={`/episodes/season/${seasonNumber}`} />
+        <BackButton />
       </Box>
     </Container>
   );

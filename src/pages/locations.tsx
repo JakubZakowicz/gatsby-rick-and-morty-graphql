@@ -29,7 +29,7 @@ const GET_LOCATIONS = gql`
   }
 `;
 
-const Locations = () => {
+const Locations: React.FC = () => {
   const [search, setSearch] = useState('');
   const { data, loading, fetchMore } = useQuery(GET_LOCATIONS, {
     variables: { name: search },
@@ -59,7 +59,7 @@ const Locations = () => {
   return (
     <Container mt="10">
       <InputGroup w={{ base: 'auto', lg: '741px' }}>
-        <InputLeftElement>
+        <InputLeftElement zIndex="1">
           <SearchIcon color="gray.300" w="20px" h="20px" ml="4px" mt="5px" />
         </InputLeftElement>
         <Input
