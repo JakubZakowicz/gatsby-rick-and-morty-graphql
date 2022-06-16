@@ -5,7 +5,7 @@ import { Flex, Button } from '@chakra-ui/react';
 const seasons: number[] = [1, 2, 3, 4, 5];
 
 const Seasons: React.FC = () => (
-  <Flex gap="8" mt="8" mb="4">
+  <Flex gap="8" mt="8" mb="4" flexWrap={{ base: 'wrap', lg: 'nowrap' }}>
     {seasons.map((number) => (
       <Button
         as={Link}

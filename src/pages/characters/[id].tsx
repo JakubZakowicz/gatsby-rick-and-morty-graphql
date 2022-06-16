@@ -52,14 +52,14 @@ const Character: React.FC<CharacterType> = ({ id }) => {
     <Container centerContent>
       <Box
         mt={20}
-        p={20}
+        p={{ base: '75px 0 50px 0', xl: '20' }}
         bg="gray"
-        w={1000}
+        w={{ base: 'auto', xl: '1000px' }}
         borderRadius={20}
         position="relative"
         boxShadow="dark-lg"
       >
-        <Flex>
+        <Flex flexWrap="wrap" justifyContent={{ base: 'center', xl: 'start' }}>
           <Image src={character.image} borderRadius={20} w={300} h={300} />
           <Box ml={20}>
             <Text fontSize="4xl" fontWeight="bold">
@@ -140,8 +140,8 @@ const Character: React.FC<CharacterType> = ({ id }) => {
                 <Box
                   as="button"
                   position="absolute"
-                  right="-130"
-                  top="0"
+                  right={{ base: '40%', xl: '-130' }}
+                  top={{ lx: '0' }}
                   onClick={() => setIsMore((prev) => !prev)}
                 >
                   {isMore ? (

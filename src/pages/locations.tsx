@@ -1,6 +1,16 @@
 import React, { useState } from 'react';
 import { useQuery, gql } from '@apollo/client';
-import { Box, Container, Flex, Spacer, Text, Input } from '@chakra-ui/react';
+import {
+  Box,
+  Container,
+  Flex,
+  Spacer,
+  Text,
+  Input,
+  InputGroup,
+  InputLeftElement,
+} from '@chakra-ui/react';
+import { SearchIcon } from '@chakra-ui/icons';
 import { BottomScrollListener } from 'react-bottom-scroll-listener';
 import Loader from '../components/Loader';
 import DetailsButton from '../components/DetailsButton';
@@ -48,13 +58,22 @@ const Locations = () => {
 
   return (
     <Container mt="10">
-      <Input
-        bg="white"
-        color="black"
-        placeholder="Search locations"
-        value={search}
-        onChange={handleChange}
-      />
+      <InputGroup w={{ base: 'auto', lg: '741px' }}>
+        <InputLeftElement>
+          <SearchIcon color="gray.300" w="20px" h="20px" ml="4px" mt="5px" />
+        </InputLeftElement>
+        <Input
+          bg="white"
+          color="black"
+          placeholder="Search locations"
+          value={search}
+          size="lg"
+          w="100%"
+          borderRadius="15px"
+          onChange={handleChange}
+        />
+      </InputGroup>
+
       {loading ? (
         <Loader />
       ) : (
@@ -64,7 +83,7 @@ const Locations = () => {
               key={location.id}
               mt="5"
               bg="gray"
-              w="741px"
+              w={{ base: 'auto', lg: '741px' }}
               p="5"
               borderRadius="15"
               boxShadow="dark-lg"
