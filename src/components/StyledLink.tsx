@@ -1,14 +1,7 @@
 import React from 'react';
 import { Link as GatsbyLink } from 'gatsby';
 import { Link } from '@chakra-ui/react';
-
-type StyledLinkProps = {
-  name?: string;
-  to: string;
-  fontSize?: string;
-  children?: JSX.Element;
-  isSecondary?: boolean;
-};
+import { StyledLinkProps } from '@/types';
 
 const StyledLink: React.FC<StyledLinkProps> = ({
   name,

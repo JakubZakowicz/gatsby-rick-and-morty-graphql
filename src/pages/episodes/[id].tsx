@@ -1,26 +1,11 @@
 import React from 'react';
 import { Box, Container, Text } from '@chakra-ui/react';
-import { useQuery, gql } from '@apollo/client';
+import { useQuery } from '@apollo/client';
+import { EpisodeProps } from '@/types';
 import BackButton from '../../components/BackButton';
 import Loader from '../../components/Loader';
 import StyledLink from '../../components/StyledLink';
-
-const GET_EPISODE = gql`
-  query getEpisode($id: ID!) {
-    episode(id: $id) {
-      id
-      name
-      air_date
-      episode
-      characters {
-        id
-        name
-      }
-    }
-  }
-`;
-
-type EpisodeProps = { id: number };
+import { GET_EPISODE } from '../../queries/index';
 
 const Episode: React.FC<EpisodeProps> = ({ id }) => {
   const { data, loading } = useQuery(GET_EPISODE, { variables: { id } });

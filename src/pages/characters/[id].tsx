@@ -1,42 +1,13 @@
 import React, { useState } from 'react';
 import { Box, Container, Flex, Image, Spacer, Text } from '@chakra-ui/react';
 import { ChevronUpIcon, ChevronDownIcon } from '@chakra-ui/icons';
-import { gql, useQuery } from '@apollo/client';
+import { useQuery } from '@apollo/client';
+import { CharacterType } from '@/types';
 import Loader from '../../components/Loader';
 import BackButton from '../../components/BackButton';
 import { statuses } from '../../utils/statuses';
 import StyledLink from '../../components/StyledLink';
-
-type CharacterType = {
-  id: number;
-};
-
-const GET_CHARACTER = gql`
-  query getCharacter($id: ID!) {
-    character(id: $id) {
-      id
-      name
-      status
-      species
-      type
-      gender
-      image
-      origin {
-        id
-        name
-      }
-      location {
-        id
-        name
-      }
-      episode {
-        id
-        name
-        episode
-      }
-    }
-  }
-`;
+import { GET_CHARACTER } from '../../queries/index';
 
 const Character: React.FC<CharacterType> = ({ id }) => {
   const { data, loading } = useQuery(GET_CHARACTER, {

@@ -1,26 +1,11 @@
 import React from 'react';
-import { useQuery, gql } from '@apollo/client';
+import { useQuery } from '@apollo/client';
 import { Box, Container, Flex, Text, Spacer } from '@chakra-ui/react';
+import { SeasonProps } from '@/types';
 import Loader from '../../../components/Loader';
 import Seasons from '../../../components/Seasons';
 import DetailsButton from '../../../components/DetailsButton';
-
-const GET_EPISODES = gql`
-  query getEpisodes($season: String!) {
-    episodes(filter: { episode: $season }) {
-      results {
-        id
-        name
-        air_date
-        episode
-      }
-    }
-  }
-`;
-
-type SeasonProps = {
-  season: number;
-};
+import { GET_EPISODES } from '../../../queries/index';
 
 const Season: React.FC<SeasonProps> = ({ season }) => {
   const { data, loading } = useQuery(GET_EPISODES, {
@@ -30,7 +15,6 @@ const Season: React.FC<SeasonProps> = ({ season }) => {
   return (
     <Container centerContent>
       <Seasons />
-
       {loading ? (
         <Loader />
       ) : (

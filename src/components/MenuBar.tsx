@@ -1,9 +1,6 @@
-import React, { MouseEventHandler } from 'react';
+import React from 'react';
 import { HamburgerIcon } from '@chakra-ui/icons';
-
-type MenuBarProps = {
-  toggleDisplayed: MouseEventHandler<HTMLButtonElement>;
-};
+import { MenuBarProps } from '@/types';
 
 const MenuBar: React.FC<MenuBarProps> = ({ toggleDisplayed }) => (
   <button type="button" onClick={toggleDisplayed}>

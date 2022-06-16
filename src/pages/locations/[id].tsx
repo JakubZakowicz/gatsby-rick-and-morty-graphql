@@ -1,28 +1,11 @@
 import React from 'react';
-import { gql, useQuery } from '@apollo/client';
+import { useQuery } from '@apollo/client';
 import { Box, Container, Text } from '@chakra-ui/react';
 import BackButton from '@/components/BackButton';
+import { LocationProps } from '@/types';
 import Loader from '@/components/Loader';
 import StyledLink from '@/components/StyledLink';
-
-const GET_LOCATION = gql`
-  query getLocation($id: ID!) {
-    location(id: $id) {
-      id
-      name
-      type
-      dimension
-      residents {
-        id
-        name
-      }
-    }
-  }
-`;
-
-type LocationProps = {
-  id: number;
-};
+import { GET_LOCATION } from '../../queries/index';
 
 const Location: React.FC<LocationProps> = ({ id }) => {
   const { data, loading } = useQuery(GET_LOCATION, { variables: { id } });

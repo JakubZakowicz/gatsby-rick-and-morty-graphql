@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useQuery, gql } from '@apollo/client';
+import { useQuery } from '@apollo/client';
 import {
   Box,
   Container,
@@ -12,22 +12,9 @@ import {
 } from '@chakra-ui/react';
 import { SearchIcon } from '@chakra-ui/icons';
 import { BottomScrollListener } from 'react-bottom-scroll-listener';
+import { GET_LOCATIONS } from '@/queries';
 import Loader from '../components/Loader';
 import DetailsButton from '../components/DetailsButton';
-
-const GET_LOCATIONS = gql`
-  query getLocations($page: Int, $name: String) {
-    locations(page: $page, filter: { name: $name }) {
-      info {
-        next
-      }
-      results {
-        id
-        name
-      }
-    }
-  }
-`;
 
 const Locations: React.FC = () => {
   const [search, setSearch] = useState('');

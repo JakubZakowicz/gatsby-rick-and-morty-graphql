@@ -1,12 +1,7 @@
 import React from 'react';
 import { Link } from 'gatsby';
 import { Button } from '@chakra-ui/react';
-
-type DetailsButtonProps = {
-  name: string;
-  to: string;
-  width?: string;
-};
+import { DetailsButtonProps } from '@/types';
 
 const DetailsButton: React.FC<DetailsButtonProps> = ({ name, to, width }) => (
   <Button as={Link} to={to} bg="yellow" borderRadius="15" w={width} zIndex={0}>

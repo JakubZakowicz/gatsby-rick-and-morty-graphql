@@ -1,32 +1,14 @@
 import React, { useState } from 'react';
 import { navigate } from 'gatsby';
 import { useQueryParam, NumberParam } from 'use-query-params';
-import { gql, useQuery } from '@apollo/client';
+import { useQuery } from '@apollo/client';
 import { Box, Container, Flex, Image, Spacer, Text } from '@chakra-ui/react';
 import ReactPaginate from 'react-paginate';
+import { GET_CHARACTERS } from '@/queries';
 import Loader from '../components/Loader';
 import { statuses } from '../utils/statuses';
 import DetailsButton from '../components/DetailsButton';
 import '../paginationStyle.css';
-
-const GET_CHARACTERS = gql`
-  query GetCharacters($page: Int) {
-    characters(page: $page) {
-      info {
-        pages
-      }
-      results {
-        id
-        name
-        status
-        species
-        type
-        gender
-        image
-      }
-    }
-  }
-`;
 
 const Home: React.FC = () => {
   const [pageParam] = useQueryParam('page', NumberParam);
