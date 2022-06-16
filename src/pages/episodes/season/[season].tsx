@@ -22,6 +22,7 @@ const Season: React.FC<SeasonProps> = ({ season }) => {
           {' '}
           {data?.episodes?.results.map((episode, index) => (
             <Box
+              key={episode.name}
               bg="gray"
               w={{ base: 'auto', md: '500px', xl: '1000px' }}
               p="5"

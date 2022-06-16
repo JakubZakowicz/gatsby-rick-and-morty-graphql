@@ -8,7 +8,7 @@ import { GET_CHARACTERS } from '@/queries';
 import Loader from '../components/Loader';
 import { statuses } from '../utils/statuses';
 import DetailsButton from '../components/DetailsButton';
-import '../paginationStyle.css';
+import '../styles/paginationStyle.css';
 
 const Home: React.FC = () => {
   const [pageParam] = useQueryParam('page', NumberParam);
@@ -50,6 +50,7 @@ const Home: React.FC = () => {
                 <Text fontSize="1xl">
                   Status:{' '}
                   <Box
+                    as="span"
                     bg={statuses[character.status]}
                     w="10px"
                     h="10px"

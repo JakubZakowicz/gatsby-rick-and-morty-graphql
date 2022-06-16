@@ -8,6 +8,7 @@ const Seasons: React.FC = () => (
   <Flex gap="8" mt="8" mb="4" flexWrap={{ base: 'wrap', lg: 'nowrap' }}>
     {seasons.map((number) => (
       <Button
+        key={number}
         as={Link}
         to={`/episodes/season/${number}`}
         bg="gray"

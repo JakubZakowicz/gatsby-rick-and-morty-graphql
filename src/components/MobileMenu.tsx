@@ -5,7 +5,7 @@ import MenuBar from './MenuBar';
 import { links } from '../utils/links';
 
 const MobileMenu: React.FC = () => {
-  const [displayed, setDisplayed] = useState(false);
+  const [displayed, setDisplayed] = useState<boolean>(false);
 
   const toggleDisplayed = () => {
     setDisplayed((prevState) => !prevState);
@@ -28,7 +28,7 @@ const MobileMenu: React.FC = () => {
       <Slide
         in={displayed}
         direction="left"
-        style={{ width: '173px', zIndex: '2' }}
+        style={{ width: '173px', zIndex: 2 }}
       >
         <List
           position="fixed"
@@ -42,7 +42,7 @@ const MobileMenu: React.FC = () => {
           fontSize="xl"
         >
           {links.map((link) => (
-            <ListItem>
+            <ListItem key={link.name}>
               <Link
                 to={link.to}
                 style={{

@@ -3276,17 +3276,10 @@
   dependencies:
     "@types/react" "*"
 
-"@types/react-dom@>=16.9.0":
-  "integrity" "sha512-8oz3NAUId2z/zQdFI09IMhQPNgIbiP8Lslhv39DIDamr846/0spjZK0vnrMak0iB8EKb9QFTTIdg2Wj2zH5a3g=="
-  "resolved" "https://registry.npmjs.org/@types/react-dom/-/react-dom-17.0.10.tgz"
-  "version" "17.0.10"
-  dependencies:
-    "@types/react" "*"
-
-"@types/react-dom@17.0.11":
-  "integrity" "sha512-f96K3k+24RaLGVu/Y2Ng3e1EbZ8/cVJvypZWd7cy0ofCBaf2lcM46xNhycMZ2xGwbBjRql7hOlZ+e2WlJ5MH3Q=="
-  "resolved" "https://registry.npmjs.org/@types/react-dom/-/react-dom-17.0.11.tgz"
-  "version" "17.0.11"
+"@types/react-dom@^18.0.4", "@types/react-dom@>=16.9.0":
+  "integrity" "sha512-OWPWTUrY/NIrjsAPkAk1wW9LZeIjSvkXRhclsFO8CZcZGCOg2G0YZy4ft+rOyYxy8B7ui5iZzi9OkDebZ7/QSA=="
+  "resolved" "https://registry.npmjs.org/@types/react-dom/-/react-dom-18.0.5.tgz"
+  "version" "18.0.5"
   dependencies:
     "@types/react" "*"
 
@@ -3297,19 +3290,19 @@
   dependencies:
     "@types/react" "*"
 
-"@types/react@*", "@types/react@>=16.9.0":
-  "integrity" "sha512-MQSR5EL4JZtdWRvqDgz9kXhSDDoy2zMTYyg7UhP+FZ5ttUOocWyxiqFJiI57sUG0BtaEX7WDXYQlkCYkb3X9vQ=="
-  "resolved" "https://registry.npmjs.org/@types/react/-/react-17.0.31.tgz"
-  "version" "17.0.31"
+"@types/react@*", "@types/react@^16.8.0 || ^17.0.0 || ^18.0.0", "@types/react@^18.0.9", "@types/react@>=16.9.0":
+  "integrity" "sha512-psqptIYQxGUFuGYwP3KCFVtPTkMpIcrqFmtKblWEUQhLuYLpHBwJkXhjp6eHfDM5IbyskY4x7qQpLedEsPkHlA=="
+  "resolved" "https://registry.npmjs.org/@types/react/-/react-18.0.13.tgz"
+  "version" "18.0.13"
   dependencies:
     "@types/prop-types" "*"
     "@types/scheduler" "*"
     "csstype" "^3.0.2"
 
-"@types/react@^16.8.0 || ^17.0.0", "@types/react@17.0.38":
-  "integrity" "sha512-SI92X1IA+FMnP3qM5m4QReluXzhcmovhZnLNm3pyeQlooi02qI7sLiepEYqT678uNiyc25XfCqxREFpy3W7YhQ=="
-  "resolved" "https://registry.npmjs.org/@types/react/-/react-17.0.38.tgz"
-  "version" "17.0.38"
+"@types/react@^16.8.0 || ^17.0.0":
+  "integrity" "sha512-zNAJVEO9dBEQLPa/OuedGfx92/UlD+1rNxSv2qVWUQZ+orEtLUWFgZ08xfyI9TAZLnmWzZDtssAsgtbXT7Ew0g=="
+  "resolved" "https://registry.npmjs.org/@types/react/-/react-17.0.46.tgz"
+  "version" "17.0.46"
   dependencies:
     "@types/prop-types" "*"
     "@types/scheduler" "*"
@@ -11565,12 +11558,12 @@
   "version" "0.9.0"
 
 "react-remove-scroll-bar@^2.1.0":
-  "integrity" "sha512-UU9ZBP1wdMR8qoUs7owiVcpaPwsQxUDC2lypP6mmixaGlARZa7ZIBx1jcuObLdhMOvCsnZcvetOho0wzPa9PYg=="
-  "resolved" "https://registry.npmjs.org/react-remove-scroll-bar/-/react-remove-scroll-bar-2.2.0.tgz"
-  "version" "2.2.0"
+  "integrity" "sha512-i9GMNWwpz8XpUpQ6QlevUtFjHGqnPG4Hxs+wlIJntu/xcsZVEpJcIV71K3ZkqNy2q3GfgvkD7y6t/Sv8ofYSbw=="
+  "resolved" "https://registry.npmjs.org/react-remove-scroll-bar/-/react-remove-scroll-bar-2.3.3.tgz"
+  "version" "2.3.3"
   dependencies:
-    "react-style-singleton" "^2.1.0"
-    "tslib" "^1.0.0"
+    "react-style-singleton" "^2.2.1"
+    "tslib" "^2.0.0"
 
 "react-remove-scroll@2.4.1":
   "integrity" "sha512-K7XZySEzOHMTq7dDwcHsZA6Y7/1uX5RsWhRXVYv8rdh+y9Qz2nMwl9RX/Mwnj/j7JstCGmxyfyC0zbVGXYh3mA=="
@@ -11583,16 +11576,16 @@
     "use-callback-ref" "^1.2.3"
     "use-sidecar" "^1.0.1"
 
-"react-style-singleton@^2.1.0":
-  "integrity" "sha512-jNRp07Jza6CBqdRKNgGhT3u9umWvils1xsuMOjZlghBDH2MU0PL2WZor4PGYjXpnRCa9DQSlHMs/xnABWOwYbA=="
-  "resolved" "https://registry.npmjs.org/react-style-singleton/-/react-style-singleton-2.1.1.tgz"
-  "version" "2.1.1"
+"react-style-singleton@^2.1.0", "react-style-singleton@^2.2.1":
+  "integrity" "sha512-ZWj0fHEMyWkHzKYUr2Bs/4zU6XLmq9HsgBURm7g5pAVfyn49DgUiNgY2d4lXRlYSiCif9YBGpQleewkcqddc7g=="
+  "resolved" "https://registry.npmjs.org/react-style-singleton/-/react-style-singleton-2.2.1.tgz"
+  "version" "2.2.1"
   dependencies:
     "get-nonce" "^1.0.0"
     "invariant" "^2.2.4"
-    "tslib" "^1.0.0"
+    "tslib" "^2.0.0"
 
-"react@*", "react@^15.3.0 || ^16.0.0 || ^17.0.0", "react@^16 || ^17 || ^18", "react@^16.0.0 || ^17.0.0", "react@^16.8.0 || ^17.0.0", "react@^16.8.0 || 17.x", "react@^16.9.0 || ^17.0.0", "react@>=16.13.1", "react@>=16.8 || ^17.0.0", "react@>=16.8.0", "react@>=16.8.6", "react@>=16.9.0", "react@15.x || 16.x || 17.x", "react@17.0.2":
+"react@*", "react@^15.3.0 || ^16.0.0 || ^17.0.0", "react@^16 || ^17 || ^18", "react@^16.0.0 || ^17.0.0", "react@^16.8.0 || ^17.0.0", "react@^16.8.0 || ^17.0.0 || ^18.0.0", "react@^16.8.0 || 17.x", "react@^16.9.0 || ^17.0.0", "react@>=16.13.1", "react@>=16.8 || ^17.0.0", "react@>=16.8.0", "react@>=16.8.6", "react@>=16.9.0", "react@15.x || 16.x || 17.x", "react@17.0.2":
   "integrity" "sha512-gnhPt75i/dq/z3/6q/0asP78D0u592D5L1pd7M8P+dck6Fu/jJeL6iVVK23fptSUZj8Vjf++7wXA8UNclGQcbA=="
   "resolved" "https://registry.npmjs.org/react/-/react-17.0.2.tgz"
   "version" "17.0.2"
@@ -13280,7 +13273,7 @@
   "resolved" "https://registry.npmjs.org/tslib/-/tslib-1.14.1.tgz"
   "version" "1.14.1"
 
-"tslib@^2", "tslib@^2.0.3", "tslib@^2.1.0", "tslib@^2.3.0":
+"tslib@^2", "tslib@^2.0.0", "tslib@^2.0.3", "tslib@^2.1.0", "tslib@^2.3.0":
   "integrity" "sha512-77EbyPPpMz+FRFRuAFlWMtmgUWGe9UOG2Z25NqCwiIjRhOf5iKGuzSe5P2w1laq+FkRy4p+PCuVkJSGkzTEKVw=="
   "resolved" "https://registry.npmjs.org/tslib/-/tslib-2.3.1.tgz"
   "version" "2.3.1"
@@ -13554,9 +13547,11 @@
     "prepend-http" "^2.0.0"
 
 "use-callback-ref@^1.2.3", "use-callback-ref@^1.2.5":
-  "integrity" "sha512-gN3vgMISAgacF7sqsLPByqoePooY3n2emTH59Ur5d/M8eg4WTWu1xp8i8DHjohftIyEx0S08RiYxbffr4j8Peg=="
-  "resolved" "https://registry.npmjs.org/use-callback-ref/-/use-callback-ref-1.2.5.tgz"
-  "version" "1.2.5"
+  "integrity" "sha512-3FT9PRuRdbB9HfXhEq35u4oZkvpJ5kuYbpqhCfmiZyReuRgpnhDlbr2ZEnnuS0RrJAPn6l23xjFg9kpDM+Ms7w=="
+  "resolved" "https://registry.npmjs.org/use-callback-ref/-/use-callback-ref-1.3.0.tgz"
+  "version" "1.3.0"
+  dependencies:
+    "tslib" "^2.0.0"
 
 "use-query-params@>=0.4.3", "use-query-params@1.2.3":
   "integrity" "sha512-cdG0tgbzK+FzsV6DAt2CN8Saa3WpRnze7uC4Rdh7l15epSFq7egmcB/zuREvPNwO5Yk80nUpDZpiyHsoq50d8w=="

@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'gatsby';
 import { List, ListItem } from '@chakra-ui/react';
 import { links } from '@/utils/links';
+import { activeLinkStyle, linkStyle } from '@/styles/menuStyles';
 import MobileMenu from './MobileMenu';
 
 const Menu: React.FC = () => (
@@ -19,18 +20,8 @@ const Menu: React.FC = () => (
       display={{ base: 'none', md: 'block' }}
     >
       {links.map((link) => (
-        <ListItem>
-          <Link
-            to={link.to}
-            style={{
-              padding: '5px 20px',
-            }}
-            activeStyle={{
-              color: '#FF9E0C',
-              background: '#24282F',
-              borderRadius: '10px',
-            }}
-          >
+        <ListItem key={link.name}>
+          <Link to={link.to} style={linkStyle} activeStyle={activeLinkStyle}>
             {link.name}
           </Link>
         </ListItem>

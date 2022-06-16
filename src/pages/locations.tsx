@@ -17,7 +17,7 @@ import Loader from '../components/Loader';
 import DetailsButton from '../components/DetailsButton';
 
 const Locations: React.FC = () => {
-  const [search, setSearch] = useState('');
+  const [search, setSearch] = useState<string>('');
   const { data, loading, fetchMore } = useQuery(GET_LOCATIONS, {
     variables: { name: search },
   });
