@@ -45,6 +45,30 @@ export type StyledLinkProps = {
   isSecondary?: boolean;
 };
 
+export type CharactersPageProps = {
+  data: {
+    rickAndMorty: {
+      characters: {
+        info: {
+          pages: number;
+        };
+        results: {
+          id: number;
+          name: string;
+          status: string;
+          species: string;
+          type: string;
+          gender: string;
+          image: string;
+        }[];
+      };
+    };
+  };
+  pageContext: {
+    page: number;
+  };
+};
+
 export type CharacterDetailsProps = {
   data: {
     rickAndMorty: {

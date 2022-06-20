@@ -54,7 +54,7 @@ const EpisodeDetails: React.FC<EpisodeDetailsProps> = ({ data }) => {
           <Text display="inline">
             <StyledLink
               name={character.name}
-              to={`/characters/${character.id}`}
+              to={`/character/${character.id}`}
               isSecondary
             />
             ,&nbsp;

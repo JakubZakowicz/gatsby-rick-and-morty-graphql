@@ -5,7 +5,7 @@ import BackButton from '@/components/BackButton';
 import { LocationDetailsProps } from '@/types';
 import StyledLink from '@/components/StyledLink';
 
-export const LOCATION_QUERY = graphql`
+export const LocationQuery = graphql`
   query LocationQuery($id: ID!) {
     rickAndMorty {
       location(id: $id) {
@@ -50,7 +50,7 @@ const Location: React.FC<LocationDetailsProps> = ({ data }) => {
           <Text display="inline">
             <StyledLink
               name={character.name}
-              to={`/characters/${character.id}`}
+              to={`/character/${character.id}`}
               isSecondary
             />
             ,&nbsp;

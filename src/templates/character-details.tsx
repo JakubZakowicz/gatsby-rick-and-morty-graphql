@@ -7,8 +7,8 @@ import BackButton from '../components/BackButton';
 import { statuses } from '../utils/statuses';
 import StyledLink from '../components/StyledLink';
 
-export const getCharacter = graphql`
-  query GetCharacter($id: ID!) {
+export const CharacterQuery = graphql`
+  query CharacterQuery($id: ID!) {
     rickAndMorty {
       character(id: $id) {
         id
@@ -93,7 +93,7 @@ const CharacterDetails: React.FC<CharacterDetailsProps> = ({ data }) => {
               ) : (
                 <StyledLink
                   name={character.origin.name}
-                  to={`/locations/${character.origin.id}`}
+                  to={`/location/${character.origin.id}`}
                   fontSize="xl"
                 />
               )}
@@ -102,14 +102,14 @@ const CharacterDetails: React.FC<CharacterDetailsProps> = ({ data }) => {
               <Text color="lightgray">Last known location:</Text>
               <StyledLink
                 name={character.location.name}
-                to={`/locations/${character.location.id}`}
+                to={`/location/${character.location.id}`}
                 fontSize="xl"
               />
             </Box>
             <Box mt={5}>
               <Text color="lightgray">Appearances:</Text>
               <Box position="relative">
-                <StyledLink to={`/episodes/${character.episode[0].id}`}>
+                <StyledLink to={`/episode/${character.episode[0].id}`}>
                   <Flex w={300} align="center">
                     <Text fontSize="xl">{character.episode[0].name}</Text>
                     <Spacer />
@@ -120,7 +120,7 @@ const CharacterDetails: React.FC<CharacterDetailsProps> = ({ data }) => {
                   character.episode.map(
                     (episode, index) =>
                       index !== 0 && (
-                        <StyledLink to={`/episodes/${episode.id}`}>
+                        <StyledLink to={`/episode/${episode.id}`}>
                           <Flex mt={2} w={300} align="center">
                             <Text fontSize="xl">{episode.name}</Text>
                             <Spacer />

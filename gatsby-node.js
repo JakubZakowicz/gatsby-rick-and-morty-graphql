@@ -17,13 +17,25 @@ exports.createPages = async ({ graphql, actions }) => {
         characters {
           info {
             count
+            pages
           }
         }
       }
     }
   `);
 
-  const charactersCount = charactersData.rickAndMorty.characters.info.count;
+  const charactersInfo = charactersData.rickAndMorty.characters.info;
+
+  const charactersPages = charactersInfo.pages;
+  for (let i = 1; i <= charactersPages; i += 1) {
+    createPage({
+      path: `/characters/${i}`,
+      component: path.resolve('src/templates/characters-page.tsx'),
+      context: { page: i },
+    });
+  }
+
+  const charactersCount = charactersInfo.count;
   for (let i = 1; i <= charactersCount; i += 1) {
     createPage({
       path: `/character/${i}`,
