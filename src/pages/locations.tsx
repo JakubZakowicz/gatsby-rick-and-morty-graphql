@@ -82,7 +82,7 @@ const Locations: React.FC = () => {
                 <Spacer />
                 <DetailsButton
                   name="See More"
-                  to={`/locations/${location.id}`}
+                  to={`/location/${location.id}`}
                 />
               </Flex>
             </Box>

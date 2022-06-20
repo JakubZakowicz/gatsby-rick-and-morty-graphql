@@ -38,7 +38,7 @@ const Season: React.FC<SeasonProps> = ({ season }) => {
                 <Spacer />
                 <Text>{episode.air_date}</Text>
                 <Spacer />
-                <DetailsButton name="See More" to={`/episodes/${episode.id}`} />
+                <DetailsButton name="See More" to={`/episode/${episode.id}`} />
               </Flex>
             </Box>
           ))}

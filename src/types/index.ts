@@ -44,3 +44,66 @@ export type StyledLinkProps = {
   children?: JSX.Element;
   isSecondary?: boolean;
 };
+
+export type CharacterDetailsProps = {
+  data: {
+    rickAndMorty: {
+      character: {
+        id: number;
+        name: string;
+        status: string;
+        species: string;
+        type: string;
+        gender: string;
+        image: string;
+        origin: {
+          id: number;
+          name: string;
+        };
+        location: {
+          id: number;
+          name: string;
+        };
+        episode: {
+          id: number;
+          name: string;
+          episode: string;
+        }[];
+      };
+    };
+  };
+};
+
+export type EpisodeDetailsProps = {
+  data: {
+    rickAndMorty: {
+      episode: {
+        id: number;
+        name: string;
+        air_date: string;
+        episode: string;
+        characters: {
+          id: number;
+          name: string;
+        }[];
+      };
+    };
+  };
+};
+
+export type LocationDetailsProps = {
+  data: {
+    rickAndMorty: {
+      location: {
+        id: number;
+        name: string;
+        type: string;
+        dimension: string;
+        residents: {
+          id;
+          name;
+        }[];
+      };
+    };
+  };
+};
