@@ -44,6 +44,15 @@ exports.createPages = async ({ graphql, actions }) => {
     });
   }
 
+  const seasons = 5;
+  for (let i = 1; i <= seasons; i += 1) {
+    createPage({
+      path: `/episodes/season/${i}`,
+      component: path.resolve('src/templates/episodes-season.tsx'),
+      context: { season: i.toString() },
+    });
+  }
+
   const { data: episodesData } = await graphql(`
     query EpisodesCountQuery {
       rickAndMorty {

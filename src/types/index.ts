@@ -98,6 +98,21 @@ export type CharacterDetailsProps = {
   };
 };
 
+export type EpisodesSeasonProps = {
+  data: {
+    rickAndMorty: {
+      episodes: {
+        results: {
+          id: number;
+          name: string;
+          air_date: string;
+          episode: string;
+        }[];
+      };
+    };
+  };
+};
+
 export type EpisodeDetailsProps = {
   data: {
     rickAndMorty: {

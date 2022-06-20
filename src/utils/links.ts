@@ -3,7 +3,7 @@ import { linkType } from '@/types';
 export const links: Array<linkType> = [
   {
     name: 'Characters',
-    to: '/',
+    to: '/characters/1',
   },
   {
     name: 'Episodes',
