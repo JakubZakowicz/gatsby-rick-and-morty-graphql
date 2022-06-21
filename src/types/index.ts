@@ -9,20 +9,6 @@ export type linkType = {
   to: string;
 };
 
-export type CharacterType = {
-  id: number;
-};
-
-export type LocationProps = {
-  id: number;
-};
-
-export type EpisodeProps = { id: number };
-
-export type SeasonProps = {
-  season: number;
-};
-
 export type DetailsButtonProps = {
   name: string;
   to: string;
