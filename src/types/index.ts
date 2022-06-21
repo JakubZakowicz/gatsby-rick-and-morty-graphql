@@ -45,6 +45,12 @@ export type StyledLinkProps = {
   isSecondary?: boolean;
 };
 
+export type PaginationProps = {
+  pageCount: number;
+  page: number;
+  handlePageClick: (selectedItem: { selected: number }) => void;
+};
+
 export type CharactersPageProps = {
   data: {
     rickAndMorty: {
@@ -127,6 +133,25 @@ export type EpisodeDetailsProps = {
         }[];
       };
     };
+  };
+};
+
+export type LocationsPageProps = {
+  data: {
+    rickAndMorty: {
+      locations: {
+        info: {
+          pages: number;
+        };
+        results: {
+          id: number;
+          name: string;
+        }[];
+      };
+    };
+  };
+  pageContext: {
+    page: number;
   };
 };
 

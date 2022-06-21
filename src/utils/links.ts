@@ -11,6 +11,6 @@ export const links: Array<linkType> = [
   },
   {
     name: 'Locations',
-    to: '/locations',
+    to: '/locations/1',
   },
 ];

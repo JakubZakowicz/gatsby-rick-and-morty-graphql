@@ -2,10 +2,9 @@ import React from 'react';
 import { graphql, navigate } from 'gatsby';
 import { Box, Container, Flex, Image, Spacer, Text } from '@chakra-ui/react';
 import { CharactersPageProps } from '@/types';
-import ReactPaginate from 'react-paginate';
-import { statuses } from '../utils/statuses';
+import Pagination from '@/components/Pagination';
 import DetailsButton from '../components/DetailsButton';
-import '../styles/paginationStyle.css';
+import { statuses } from '../utils/statuses';
 
 export const CharactersQuery = graphql`
   query CharactersQuery($page: Int) {
@@ -94,21 +93,10 @@ const CharactersPage: React.FC<CharactersPageProps> = ({
         </Box>
       ))}
       <Flex justify="start">
-        <ReactPaginate
+        <Pagination
           pageCount={charactersData.info.pages}
-          initialPage={page - 1}
-          previousLabel="<"
-          nextLabel=">"
-          pageLinkClassName="link"
-          previousLinkClassName="link"
-          nextLinkClassName="link"
-          breakLabel="..."
-          breakLinkClassName="link"
-          marginPagesDisplayed={2}
-          pageRangeDisplayed={5}
-          containerClassName="container"
-          activeLinkClassName="active-link"
-          onPageChange={handlePageClick}
+          page={page}
+          handlePageClick={handlePageClick}
         />
       </Flex>
     </Container>

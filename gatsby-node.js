@@ -80,13 +80,25 @@ exports.createPages = async ({ graphql, actions }) => {
         locations {
           info {
             count
+            pages
           }
         }
       }
     }
   `);
 
-  const locationsCount = locationsData.rickAndMorty.locations.info.count;
+  const locationsInfo = locationsData.rickAndMorty.locations.info;
+
+  const locationsPages = locationsInfo.pages;
+  for (let i = 1; i <= locationsPages; i += 1) {
+    createPage({
+      path: `/locations/${i}`,
+      component: path.resolve('src/templates/locations-page.tsx'),
+      context: { page: i },
+    });
+  }
+
+  const locationsCount = locationsInfo.count;
   for (let i = 1; i <= locationsCount; i += 1) {
     createPage({
       path: `/location/${i}`,
