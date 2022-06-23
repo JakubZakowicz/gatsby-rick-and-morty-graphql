@@ -2,6 +2,7 @@ import React from 'react';
 import { Box, Button, Flex, Text } from '@chakra-ui/react';
 import { graphql, Link } from 'gatsby';
 import Img from 'gatsby-image';
+import Seo from '../components/Seo';
 
 export const BackgroundQuery = graphql`
   query BackgroundQuery {
@@ -17,6 +18,7 @@ export const BackgroundQuery = graphql`
 
 const Home = ({ data }) => (
   <Box>
+    <Seo title="Rick and Morty | Home Page" />
     <Box
       position="absolute"
       top="0"
@@ -25,7 +27,10 @@ const Home = ({ data }) => (
       filter="auto"
       brightness="40%"
     >
-      <Img fixed={data.file.childImageSharp.fixed} />
+      <Img
+        fixed={data.file.childImageSharp.fixed}
+        alt="Rick and Morty background"
+      />
     </Box>
     <Flex
       position="absolute"

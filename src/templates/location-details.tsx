@@ -4,6 +4,7 @@ import { Box, Container, Text } from '@chakra-ui/react';
 import BackButton from '@/components/BackButton';
 import { LocationDetailsProps } from '@/types';
 import StyledLink from '@/components/StyledLink';
+import Seo from '../components/Seo';
 
 export const LocationQuery = graphql`
   query LocationQuery($id: ID!) {
@@ -27,6 +28,7 @@ const Location: React.FC<LocationDetailsProps> = ({ data }) => {
 
   return (
     <Container>
+      <Seo title={`Location | ${location.name}`} />
       <Box
         mt="10"
         bg="gray"

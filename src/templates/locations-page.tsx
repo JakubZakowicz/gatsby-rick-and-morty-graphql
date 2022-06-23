@@ -4,6 +4,7 @@ import { Box, Container, Flex, Spacer, Text } from '@chakra-ui/react';
 import { LocationsPageProps } from '@/types';
 import Pagination from '@/components/Pagination';
 import DetailsButton from '../components/DetailsButton';
+import Seo from '../components/Seo';
 
 export const LocationsQuery = graphql`
   query LocationsQuery($page: Int) {
@@ -32,6 +33,7 @@ const LocationsPage: React.FC<LocationsPageProps> = ({ data, pageContext }) => {
 
   return (
     <Container mt="10">
+      <Seo title={`Locations | page ${page}`} />
       {locations?.results?.map((location) => (
         <Box
           key={location.id}

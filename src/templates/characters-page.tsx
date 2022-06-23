@@ -4,6 +4,7 @@ import { Box, Container, Flex, Image, Spacer, Text } from '@chakra-ui/react';
 import { CharactersPageProps } from '@/types';
 import Pagination from '@/components/Pagination';
 import DetailsButton from '../components/DetailsButton';
+import Seo from '../components/Seo';
 import { statuses } from '../utils/statuses';
 
 export const CharactersQuery = graphql`
@@ -41,6 +42,7 @@ const CharactersPage: React.FC<CharactersPageProps> = ({
 
   return (
     <Container>
+      <Seo title={`Characters | page ${page}`} />
       {charactersData?.results.map((character) => (
         <Box
           key={character.id}

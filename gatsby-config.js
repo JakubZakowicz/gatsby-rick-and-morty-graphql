@@ -1,9 +1,14 @@
 const path = require(`path`);
 
 module.exports = {
-  // Since `gatsby-plugin-typescript` is automatically included in Gatsby you
-  // don't need to define it here (just if you need to change the options)
+  siteMetadata: {
+    title: 'Rick and Morty',
+    description:
+      'This is a "Rick and Morty Website", where you can see all the details about all characters, locations and episodes from one of the most popular and beloved TV show called "Rick and Morty"',
+    author: 'Jakub Zakowicz',
+  },
   plugins: [
+    'gatsby-plugin-react-helmet',
     '@chakra-ui/gatsby-plugin',
     'gatsby-plugin-use-query-params',
     {

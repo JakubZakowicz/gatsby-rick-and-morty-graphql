@@ -3,6 +3,7 @@ import { graphql } from 'gatsby';
 import { Box, Container, Flex, Image, Spacer, Text } from '@chakra-ui/react';
 import { ChevronUpIcon, ChevronDownIcon } from '@chakra-ui/icons';
 import { CharacterDetailsProps } from '@/types';
+import Seo from '../components/Seo';
 import BackButton from '../components/BackButton';
 import { statuses } from '../utils/statuses';
 import StyledLink from '../components/StyledLink';
@@ -42,6 +43,7 @@ const CharacterDetails: React.FC<CharacterDetailsProps> = ({ data }) => {
 
   return (
     <Container centerContent>
+      <Seo title={`Character | ${character.name}`} />
       <Box
         mt={20}
         p={{ base: '75px 0 50px 0', xl: '20' }}
@@ -52,7 +54,13 @@ const CharacterDetails: React.FC<CharacterDetailsProps> = ({ data }) => {
         boxShadow="dark-lg"
       >
         <Flex flexWrap="wrap" justifyContent={{ base: 'center', xl: 'start' }}>
-          <Image src={character.image} borderRadius={20} w={300} h={300} />
+          <Image
+            src={character.image}
+            borderRadius={20}
+            w={300}
+            h={300}
+            alt={character.name}
+          />
           <Box ml={20}>
             <Text fontSize="4xl" fontWeight="bold">
               {character.name}

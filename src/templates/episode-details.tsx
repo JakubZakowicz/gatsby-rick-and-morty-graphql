@@ -4,6 +4,7 @@ import { Box, Container, Text } from '@chakra-ui/react';
 import { EpisodeDetailsProps } from '@/types';
 import BackButton from '../components/BackButton';
 import StyledLink from '../components/StyledLink';
+import Seo from '../components/Seo';
 
 export const EpisodeQuery = graphql`
   query EpisodeQuery($id: ID!) {
@@ -30,6 +31,7 @@ const EpisodeDetails: React.FC<EpisodeDetailsProps> = ({ data }) => {
 
   return (
     <Container>
+      <Seo title={`Season ${seasonNumber} / Episode ${episodeNumber}`} />
       <Box
         mt="10"
         bg="gray"

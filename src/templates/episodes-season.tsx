@@ -4,6 +4,7 @@ import { graphql } from 'gatsby';
 import { EpisodesSeasonProps } from '@/types';
 import Seasons from '../components/Seasons';
 import DetailsButton from '../components/DetailsButton';
+import Seo from '../components/Seo';
 
 export const EpisodesQuery = graphql`
   query EpisodesQuery($season: String!) {
@@ -20,10 +21,15 @@ export const EpisodesQuery = graphql`
   }
 `;
 
-const EpisodesSeason: React.FC<EpisodesSeasonProps> = ({ data }) => {
+const EpisodesSeason: React.FC<EpisodesSeasonProps> = ({
+  data,
+  pageContext,
+}) => {
+  const { season } = pageContext;
   const { episodes } = data.rickAndMorty;
   return (
     <Container centerContent>
+      <Seo title={`Season ${season}`} />
       <Seasons />
       {episodes?.results.map((episode, index) => (
         <Box
