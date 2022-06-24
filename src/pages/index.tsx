@@ -1,34 +1,18 @@
 import React from 'react';
 import { Box, Button, Flex, Text } from '@chakra-ui/react';
-import { graphql, Link } from 'gatsby';
-import Img from 'gatsby-image';
+import { Link } from 'gatsby';
+import { StaticImage } from 'gatsby-plugin-image';
 import Seo from '../components/Seo';
 
-export const BackgroundQuery = graphql`
-  query BackgroundQuery {
-    file {
-      childImageSharp {
-        fixed(width: 1833) {
-          ...GatsbyImageSharpFixed_withWebp
-        }
-      }
-    }
-  }
-`;
-
-const Home = ({ data }) => (
+const Home: React.FC = () => (
   <Box>
     <Seo title="Rick and Morty | Home Page" />
-    <Box
-      position="absolute"
-      top="0"
-      w="99vw"
-      h="100vh"
-      filter="auto"
-      brightness="40%"
-    >
-      <Img
-        fixed={data.file.childImageSharp.fixed}
+    <Box position="absolute" top="0" filter="auto" brightness="40%">
+      <StaticImage
+        src="../images/rick_and_morty.webp"
+        layout="fixed"
+        width={1848}
+        height={948}
         alt="Rick and Morty background"
       />
     </Box>

@@ -10,6 +10,7 @@ module.exports = {
   plugins: [
     'gatsby-plugin-react-helmet',
     '@chakra-ui/gatsby-plugin',
+    'gatsby-plugin-image',
     'gatsby-plugin-use-query-params',
     {
       resolve: `gatsby-source-filesystem`,
@@ -18,8 +19,7 @@ module.exports = {
         path: path.join(__dirname, `src`, `images`),
       },
     },
-    `gatsby-plugin-sharp`,
-    `gatsby-transformer-sharp`,
+    'gatsby-plugin-sharp',
     {
       resolve: 'gatsby-source-graphql',
       options: {

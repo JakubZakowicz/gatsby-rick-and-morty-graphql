@@ -69,6 +69,7 @@ const CharacterDetails: React.FC<CharacterDetailsProps> = ({ data }) => {
               <Text color="#9E9E9E">Status:</Text>
               <Text fontSize="xl">
                 <Box
+                  as="span"
                   bg={statuses[character.status]}
                   w="10px"
                   h="10px"

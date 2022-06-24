@@ -30,7 +30,7 @@ export type LayoutProps = {
 };
 
 export type MenuBarProps = {
-  toggleDisplayed: MouseEventHandler<HTMLButtonElement>;
+  onOpen: MouseEventHandler<HTMLButtonElement>;
 };
 
 export type StyledLinkProps = {

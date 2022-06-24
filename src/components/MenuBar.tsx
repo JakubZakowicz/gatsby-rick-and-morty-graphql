@@ -2,8 +2,8 @@ import React from 'react';
 import { HamburgerIcon } from '@chakra-ui/icons';
 import { MenuBarProps } from '@/types';
 
-const MenuBar: React.FC<MenuBarProps> = ({ toggleDisplayed }) => (
-  <button type="button" onClick={toggleDisplayed}>
+const MenuBar: React.FC<MenuBarProps> = ({ onOpen }) => (
+  <button type="button" onClick={onOpen}>
     <HamburgerIcon
       marginTop="4"
       marginLeft="4"
