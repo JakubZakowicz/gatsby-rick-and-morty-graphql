@@ -1,64 +1,34 @@
-<p align="center">
-  <img src="https://user-images.githubusercontent.com/26466516/107675788-31f54e00-6c77-11eb-96c9-58fd8a4c69ac.png" alt="Gatsby and TypeScript">
-</p>
+# Rick and Morty Website made in Gatsby
+This is a Rick and Morty website made in Gatsby. In this website you can find information about each character, episode and location from one of the most popular and beloved (by me included) TV shows "Rick and Morty". Data is fetched from GraphQL API https://rickandmortyapi.com/graphql.
 
-<p align="center">
-  <img src="https://img.shields.io/static/v1?label=PRs&message=welcome&style=for-the-badge&color=24B36B&labelColor=000000" alt="PRs welcome!" />
+Rick and Morty API docs: https://rickandmortyapi.com/documentation
 
-  <img alt="License" src="https://img.shields.io/github/license/jpedroschmitz/gatsby-starter-ts?style=for-the-badge&color=24B36B&labelColor=000000">
+## React version
 
-  <a href="https://twitter.com/intent/follow?screen_name=jpedroschmitz">
-    <img src="https://img.shields.io/twitter/follow/jpedroschmitz?style=for-the-badge&color=24B36B&labelColor=000000" alt="Follow @jpedroschmitz" />
-  </a>
-</p>
+Here is a remake of React version of this website https://github.com/JakubZakowicz/react-rick-and-morty-graphql. The main difference between Gatsby and React version is that in Gatsby the whole website is statically generated, where in React data is dynamically fetched. Thanks to Gatsby static site generator the website is faster and more efficient comparing to its React version.
 
-<br>
+I made this website to hone my skills using Gatsby and get to know new gatsby plugins.
 
-A TypeScript starter for Gatsby. No plugins and styling. Exactly the necessary to start 🔥
+![image](https://user-images.githubusercontent.com/63516552/177199614-bd1c02c4-9f41-4c5f-95e0-47544fdae27a.png)
 
-No plugins installed, great for advanced users.
+## What have I learned?
+My understending of Gatsby and GraphQL has improved. Additionaly I learned how to statically generate data from external API and got to know new plugin and funcionalities.
 
-- 📏 **ESLint** — Pluggable JavaScript linter
-- 💖 **Prettier** - Opinionated Code Formatter
-- 🐶 **Husky** — Use git hooks with ease
-- 📄 **Commitizen** - Conventional commit messages CLI
-- 🐐 **Tests** - Jest and Testing Library
-- 🚓 **Commitlint** - Lint commit messages
-- 🖌 **Renovate** - Dependency update tool
-- 🚫 **lint-staged** - Run linters against staged git files
-- 👷 **PR Workflow** - Run Type Check & Linters on pull requests
-- 🗂 **Root import** - Import folders and files using the `@` prefix.
+## Demo
+Here is a live demo: https://gatsby-rick-and-morty-graphql.netlify.app/
 
-## 🚀 Getting started
+## Setup
 
-The best way to start with this template is using the Gatsby CLI.
+```shell
+# Clone this repository
+$ git clone https://github.com/JakubZakowicz/gatsby-rick-and-morty-graphql.git
 
+# Go into the repository
+$ cd gatsby-rick-and-morty-graphql
+
+# Install dependiences
+$ npm install
+
+# Run the app
+$ npm start
 ```
-npx gatsby new starter-ts https://github.com/jpedroschmitz/gatsby-starter-ts
-```
-
-If you prefer you can clone this repository and run the following commands inside the project folder:
-
-> By default, this starter uses Yarn, but this choice is yours. If you'd like to switch to npm, delete the `yarn.lock` file, install the dependencies with `npm install`, and change the CI workflows, Husky Git hooks, and lint-staged steps to use npm commands.
-
-1. `yarn`;
-2. `yarn start`;
-
-To view the project you can open `http://localhost:8000`.
-
-## 🤝 Contributing
-
-1. Fork this repository;
-2. Create your branch: `git checkout -b my-new-feature`;
-3. Commit your changes: `git commit -m 'Add some feature'`;
-4. Push to the branch: `git push origin my-new-feature`.
-
-**After your pull request is merged**, you can safely delete your branch.
-
-## 📝 License
-
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for more information.
-
----
-
-Made with ♥ by João Pedro Schmitz
