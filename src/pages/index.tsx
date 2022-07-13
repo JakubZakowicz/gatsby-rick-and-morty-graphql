@@ -7,12 +7,18 @@ import Seo from '../components/Seo';
 const Home: React.FC = () => (
   <Box>
     <Seo title="Rick and Morty | Home Page" />
-    <Box position="absolute" top="0" filter="auto" brightness="40%">
+    <Box
+      position="absolute"
+      top="0"
+      width="100%"
+      height="100%"
+      filter="auto"
+      overflow="hidden"
+      brightness="40%"
+    >
       <StaticImage
         src="../images/rick_and_morty.webp"
         layout="fixed"
-        width={1848}
-        height={948}
         alt="Rick and Morty background"
       />
     </Box>
