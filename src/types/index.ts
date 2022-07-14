@@ -38,7 +38,6 @@ export type StyledLinkProps = {
   to: string;
   fontSize?: string;
   children?: JSX.Element;
-  isSecondary?: boolean;
 };
 
 export type PaginationProps = {

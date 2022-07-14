@@ -8,14 +8,13 @@ const StyledLink: React.FC<StyledLinkProps> = ({
   to,
   children = null,
   fontSize = 'md',
-  isSecondary = false,
 }) => (
   <Link
     as={GatsbyLink}
     to={to}
-    _hover={{ color: isSecondary ? 'white' : 'yellow' }}
+    _hover={{ color: 'white' }}
     fontSize={fontSize}
-    color={`${isSecondary ? 'yellow' : 'white'}`}
+    color="yellow"
   >
     {name}
     {children}
